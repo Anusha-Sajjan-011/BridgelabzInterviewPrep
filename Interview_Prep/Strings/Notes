@@ -1,0 +1,172 @@
+--> Arrays and Array
+
+1. array (lowercase) → Built-in data structure
+
+An array is a language-level feature in Java.
+It is not a class.
+It is a fundamental container that holds multiple values of the same type.
+
+Example:
+int[] numbers = {1, 2, 3};
+char[] x = a.toCharArray();
+
+Characteristics:
+
+Fixed size
+Stores elements directly
+Index-based
+Created using new or array literals
+No built-in methods except .length field
+
+Example operations:
+numbers[0] // access element
+numbers.length // array size
+
+2. Arrays (capital A) → Utility Class
+   Arrays is a class from java.util package.
+   import java.util.Arrays;
+
+This class provides static utility methods for working with arrays.
+
+Common operations provided by Arrays:
+
+Sorting → Arrays.sort(array)
+Comparing → Arrays.equals(array1, array2)
+Binary search → Arrays.binarySearch(array)
+Filling → Arrays.fill(array, value)
+
+Converting to string → Arrays.toString(array)
+
+Example from your code:
+Arrays.sort(x);
+Arrays.sort(y);
+Arrays.equals(x, y);
+
+These are helper methods, not part of the array itself.
+
+4. Simple Explanation
+
+array → the actual storage box
+Arrays → a toolbox containing tools to work on that box
+
+![alt text](image.png)
+
+<!-- ---------------------------------------------------------------------------------------------------------------- -->
+
+NOTES ON STRING IMMUTABILITY & STRINGBUILDER (JAVA)
+
+1. Strings Are Immutable in Java
+   Definition
+
+A String is immutable, meaning its value cannot be changed after creation.
+
+Any modification (concatenation, replace, substring, etc.) creates a new String object instead of modifying the existing one.
+
+Why Strings Are Immutable
+
+Security
+
+Strings are used in sensitive areas: URLs, database connections, usernames, passwords, class loading.
+
+If strings were mutable, someone could change these values after they are created, causing vulnerabilities.
+
+String Pool Optimization
+
+Java maintains a String Constant Pool (SCP) to reuse string objects.
+
+If strings were mutable, sharing them safely across the pool would be impossible.
+
+Thread-Safety
+
+Immutable objects are automatically thread-safe.
+
+Multiple threads can use the same String without synchronization.
+
+HashCode Consistency
+
+Strings are frequently used as keys in HashMap, HashSet.
+
+If a String changed after insertion, the hashcode would change, breaking the collection.
+
+Example of Immutability
+String s = "hello";
+s = s + "world";
+
+"hello" cannot be changed.
+
+"helloworld" is a new object, and s now refers to this new object.
+
+The original "hello" remains unchanged.
+
+2. StringBuilder (Mutable Class)
+   Definition
+
+StringBuilder is a mutable class used for efficient modification of strings.
+
+Mutable means you can modify the content without creating new objects.
+
+Why Use StringBuilder
+
+Performance
+
+Repeated string operations (append, insert, delete) do not create new objects.
+
+Much faster than using String in loops.
+
+Memory Efficiency
+
+Modifies the same underlying buffer instead of creating new strings.
+
+Important Methods
+
+append(value) → Adds data to the end.
+
+insert(pos, value) → Inserts data at a specific index.
+
+delete(start, end) → Removes characters.
+
+reverse() → Reverses the string.
+
+toString() → Converts the builder content to a String.
+
+Example
+StringBuilder sb = new StringBuilder();
+sb.append("Hello");
+sb.append("World");
+System.out.println(sb.toString());
+
+Output:
+
+HelloWorld
+
+Only one object is modified.
+
+No extra strings are created.
+
+3. Difference Between String and StringBuilder
+   Feature ->String -StringBuilder
+   Mutability ->Immutable - Mutable
+   Performance -> Slow in loops - Fast for modifications
+   Thread Safety-> Yes - No
+   Memory usage ->Higher - Lower
+   Usage Constant or fixed text - Dynamic text building
+4. When to Use What
+   Use String when:
+
+Value will not change.
+
+You work with constants, keys, config values.
+
+Use StringBuilder when:
+
+You are building text dynamically.
+
+You are appending inside loops.
+
+You want optimized performance.
+
+5. One-Line Summary
+
+String = Immutable, safe, shared, slow for modifications
+
+StringBuilder = Mutable, efficient for building and modifying strings

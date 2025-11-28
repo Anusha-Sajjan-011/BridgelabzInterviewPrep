@@ -1,0 +1,179 @@
+1) why ece why not other branches
+“I chose Electronics and Communication Engineering because it operates at the convergence 
+of hardware, communication systems, and software. The discipline offers a scalable, future-ready
+skill portfolio and enables participation across high-growth domains such as IoT, automation,
+semiconductors, embedded systems, and even software engineering.
+
+During my internship in Embedded C, I gained hands-on exposure to system-level development and
+end-to-end communication between circuitry and software. Out of curiosity, I later explored 
+full-stack web development and realized that I genuinely enjoy building and engineering solutions. 
+That clarity helped me position development as my long-term career path.
+
+Compared to other branches, ECE provides strategic flexibility—with opportunities in both
+core hardware and software ecosystems. That versatility, combined with my interest in development,
+is the reason I intentionally pursued ECE.”
+
+-----------------------------------------------------------------------------------------------------------------------------
+2) Self Introduction 
+Good morning/afternoon. My name is Anusha M G, and I’m from Bangalore, Karnataka.
+I am currently pursuing my Bachelor of Engineering in Electronics and Communication 
+at STJIT, Ranebennur, with a CGPA of 8.24.
+
+I have strong technical competencies in Java, JavaScript, Full Stack Development, 
+Spring Boot, Microservices, and React. My hands-on experience spans HTML, CSS,
+ Bootstrap, Tailwind CSS, Angular, Node.js, Express.js, REST APIs, MySQL, MongoDB,
+ and version control using Git and GitHub. I also have working exposure to DevOps
+  tools such as Docker, Kubernetes, AWS, CI/CD pipelines, and Jenkins.
+
+I completed a Full Stack Development internship at Apponix Academy, Hubli,
+ where I built responsive landing pages and enhanced frontend-to-backend integration
+ \ capabilities. I also completed the Apna College Java + DSA and Full Stack certification,
+  which strengthened my problem-solving and backend development fundamentals.
+
+Some of my key projects include:
+
+RoadReady – Car Rental Management System, built using Spring Boot and Angular
+ with JWT authentication, REST APIs, and Swagger documentation.
+
+Wanderlust – Full Stack Web Application, developed using Node.js, 
+Express.js, and EJS with authentication and CRUD functionalities.
+
+IV Drip Management System, an IoT solution using Embedded C,
+ sensors, microcontrollers, and Blynk to automate fluid monitoring and alerting.
+
+I am a proactive learner with strengths in communication, teamwork, 
+adaptability, and analytical thinking.
+ My career objective is to begin as a Full Stack or Software
+  Developer, contribute to scalable, real-world applications,
+   and continuously advance my technical expertise in a collaborative environment.
+
+   ---------------------------------------------------------------------------------------------------------
+
+3) Why java is not 100% object oriented program
+   1. Primitive Data Types — int, float, char, boolean, etc., are value types stored directly
+       in memory, not objects.
+       (If Java were 100% OOP, every data element would be an object.)
+
+  2. Top-Level Non-OOP Features — main() must be static to run without object creation, 
+    Why main() is static
+
+    The JVM needs an entry point to start the program.
+    At startup, no objects exist yet.
+    If main() were non-static, the JVM would be forced to create an object first—but it wouldn’t know which constructor, what parameters, or what dependencies to supply.
+    Making main() static allows the JVM to invoke it directly at the class level:
+    public static void main(String[] args) { } which breaks pure object dependency.  
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+4) static keyword 
+Why we use static
+
+Improves memory efficiency (one copy shared)
+Enables execution before object creation
+Simplifies access to common resources
+Supports procedural entry point (public static void main)
+
+Important constraints
+Static methods cannot access non-static variables/methods directly
+(no object context available)
+this and super cannot be used inside static methods
+class Demo {
+    int count = 10; // non-static (instance variable)
+
+    static void display() {
+        System.out.println(count); // ❌ compile-time error
+    }
+}
+Why it fails
+display() belongs to the class, but count belongs to an object. Without an object reference, 
+the JVM has no instance to read count from.
+
+class Demo {
+    int count = 10;
+
+    static void display() {
+        Demo d = new Demo();    // create object
+        System.out.println(d.count); // ✅ valid
+    }
+}
+
+----------------------------------------------------------------------------------------------------------------
+
+5) Difference between static and abstract method
+| Static                                     | Abstract Method                             |
+| ------------------------------------------ | ------------------------------------------- |
+| Keyword/modifier                           | Method type                                 |
+| Class-level                                | Object/instance-level                       |
+| Has implementation                         | No implementation                           |
+| Cannot be overridden (true static methods) | Must be overridden                          |
+| Accessible without object                  | Requires subclass object                    |
+| Used for memory efficiency & utility logic | Used for design abstraction & extensibility |
+
+**> Static Keyword
+
+A modifier applied to variables, methods, blocks, or nested classes
+Belongs to the class, not an object
+Can be accessed without creating an instance
+Used for shared data, utilities, constants, and entry points
+
+class Util {
+    static void log() {
+        System.out.println("Logging...");
+    }
+}
+// call
+Util.log();
+
+**> Abstract Method
+
+A method declaration without implementation
+Exists only inside an abstract class or interface
+Must be implemented by child classes—supports polymorphism and design contracts
+Cannot be static, final, or private because it requires overriding
+
+abstract class Shape {
+    abstract void draw();
+}
+class Circle extends Shape {
+    void draw() {
+        System.out.println("Drawing circle");
+    }
+}
+✅ Core Purpose
+static — used for class-level data or behavior; avoids repeated memory allocation.
+abstract — used to define an incomplete method/blueprint to be implemented by subclasses.
+
+✅ Memory & Execution
+static members exist once per class (shared across all objects).
+abstract methods have no implementation—memory allocation happens only after subclass object creation.
+
+✅ Overriding & Polymorphism
+static methods cannot be overridden—they are resolved at compile time (method hiding).
+abstract methods must be overridden—supports runtime polymorphism.
+
+✅ Polymorphism Support
+static → no runtime polymorphism.
+abstract → enables runtime polymorphism through overriding.
+
+✅ Keywords & Usage
+static keyword for static methods, variables, blocks, nested classes
+abstract keyword for abstract classes and abstract methods.
+
+✅ extends vs implements
+To use an abstract class, a subclass extends it.
+To use an interface, a class implements it.
+Interfaces also achieve abstraction, even without the abstract keyword—methods are implicitly abstract (except default/static).
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+| Feature        | Local Variable          | Instance Variable            |
+| -------------- | ----------------------- | ---------------------------- |
+| Scope          | Method/Block            | Entire object                |
+| Storage        | Stack                   | Heap                         |
+| Lifetime       | During method execution | As long as the object exists |
+| Default Values | None                    | Given by JVM                 |
+| Modifiers      | Not allowed             | Allowed                      |
+
+
+/-> project go through
+https://chatgpt.com/c/692893b8-d87c-8320-9df0-b83cd1d37866

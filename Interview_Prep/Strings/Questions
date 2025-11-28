@@ -1,0 +1,14 @@
+--> Strings
+Q1) Reverse a string without using built-in reverse.
+Q2) Check if a string is a palindrome.
+Q3) Find the first non-repeating character in a string.
+Q4) Count occurrences of each character.
+Q5) Check if two strings are anagrams.
+Q6) Remove all duplicates from a string.
+Q7) Find the longest substring without repeating characters.
+
+-->Sliding window problems
+1)Longest substring without repeating characters
+2)Subarray with sum K
+3)Maximum window sum
+4)Fixed-size window problems

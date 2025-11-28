@@ -1,0 +1,23 @@
+--> Arrays
+
+Q1) Find the largest and smallest number in an array.
+Q2) Reverse an array in-place.
+Q3) Find the second largest element.
+Q4) Move all zeros to the end of the array.
+Q5) Rotate array by K positions.
+Q6) Find missing number in the range 1…N.
+Q7) Find all pairs in an array that sum to a target.
+
+
+Also 
+Arrays
+1. Two Sum
+2. Best Time to Buy and Sell Stock
+3. Maximum Subarray (Kadane’s Algorithm)
+4. Merge Intervals
+5. Product of Array Except Self
+6. 3Sum
+7. Container With Most Water
+8. Set Matrix Zeroes
+9. Rotate Array
+10. Missing Number
